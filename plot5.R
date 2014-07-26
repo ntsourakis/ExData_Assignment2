@@ -18,6 +18,9 @@ NEI.motor <- NEI[NEI$SCC %in% SCC.identifiers, ]
 data <- with(NEI.motor[which(NEI.motor$fips == "24510"), ], aggregate(Emissions, by = list(year), 
     sum))
 
+# Use white background
+par(bg = "white")
+
 # Make the plot
 plot(data, type = "o", ylab = "Emissions", 
     xlab = "Year", main = "Total Emissions from Motor Vehicle")

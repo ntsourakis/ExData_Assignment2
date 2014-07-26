@@ -10,6 +10,9 @@ NEI <- readRDS("summarySCC_PM25.rds")
 data <- with(NEI[which(NEI$fips == "24510"), aggregate(Emissions, by = list(year), sum))
 colnames(data) <- c("year", "Emissions")
 
+# Use white background
+par(bg = "white")
+
 # Make the plot
 plot(data, type = "o", ylab = expression("Emissions"), 
     xlab = "Year", main = "Total Emissions in Baltimore")

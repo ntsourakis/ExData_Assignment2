@@ -9,6 +9,9 @@ NEI <- readRDS("summarySCC_PM25.rds")
 # Read the data of interest
 data <- with(NEI, aggregate(Emissions, by = list(year), sum))
 
+# Use white background
+par(bg = "white")
+	
 # Make the plot
 plot(data, type = "o", ylab = expression("Emissions"), 
     xlab = "Year", main = "Total Emissions in US")
